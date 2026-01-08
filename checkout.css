@@ -1,0 +1,111 @@
+body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+.navbar { display:flex; justify-content:space-between; align-items:center; background:#111; color:#fff; padding:15px 50px; }
+.navbar a { color:#fff; margin-left:20px; text-decoration:none; }
+.checkout-container { display:flex; flex-wrap:wrap; max-width:1100px; margin:30px auto; background:#fff; border-radius:10px; padding:20px; gap:20px; }
+.checkout-left { flex:1; min-width:300px; }
+.checkout-left h2 { margin-bottom:15px; }
+.checkout-left label { display:block; margin-top:10px; }
+.checkout-left input, .checkout-left textarea { width:100%; padding:8px; margin-top:5px; border-radius:5px; border:1px solid #ccc; box-sizing:border-box; }
+.checkout-left textarea { resize:vertical; }
+.checkout-right { flex:1; min-width:300px; }
+.cart-item { display:flex; align-items:center; margin-bottom:15px; border-bottom:1px solid #ddd; padding-bottom:10px; }
+.cart-item img { width:80px; height:80px; object-fit:cover; margin-right:15px; }
+.item-details h3 { margin:0; }
+.item-details p { margin:5px 0; }
+.item-qty { width:50px; padding:5px; }
+.remove-item { cursor:pointer; margin-left:auto; }
+.checkout-summary { text-align:right; margin-top:20px; }
+#pay-btn { padding:10px 20px; background:#25D366; color:#fff; border:none; cursor:pointer; border-radius:5px; }
+/* @media(max-width:900px){ .checkout-container { flex-direction:column; } } */
+/* ========================= */
+/* MOBILE & TABLET */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* HERO */
+  .contact-hero {
+    padding: 45px 15px;
+  }
+
+  .contact-hero h1 {
+    font-size: 30px;
+  }
+
+  .contact-hero p {
+    font-size: 14px;
+  }
+
+  /* CONTAINER */
+  .contact-container {
+    flex-direction: column;
+    padding: 35px 6%;
+    gap: 25px;
+  }
+
+  /* BOXES */
+  .contact-info,
+  .contact-form {
+    padding: 25px;
+    border-radius: 14px;
+  }
+
+  .contact-info h2,
+  .contact-form h2 {
+    font-size: 20px;
+  }
+
+  .contact-info p {
+    font-size: 13px;
+  }
+
+  .info-box {
+    font-size: 14px;
+  }
+
+  .info-box span {
+    font-size: 18px;
+  }
+
+  /* FORM */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 11px 12px;
+  }
+
+  .contact-form button {
+    font-size: 14px;
+    padding: 13px;
+  }
+}
+
+/* ========================= */
+/* SMALL MOBILES */
+/* ========================= */
+@media (max-width: 480px) {
+
+  .contact-hero h1 {
+    font-size: 26px;
+  }
+
+  .contact-hero p {
+    font-size: 13px;
+  }
+
+  .contact-container {
+    padding: 30px 5%;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form textarea {
+    min-height: 130px;
+  }
+
+  .contact-form button {
+    border-radius: 24px;
+  }
+}

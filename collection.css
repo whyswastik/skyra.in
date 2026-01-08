@@ -1,0 +1,260 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Footer ko niche rakhne ke liye body setting */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  display: flex;
+  flex-direction: column; /* This pushes the footer to bottom */
+  line-height: 1.6;
+}
+
+/* Main content area jo bachi hui space cover karega */
+main {
+  flex: 1;
+}
+
+/* ============== NAVBAR (LAPTOP OPTIMIZED) ============== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 80px; /* Laptop par zyada padding */
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 18px; /* Slightly bigger text */
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #aaa;
+}
+
+/* ============== HERO SECTION (LAPTOP OPTIMIZED) ============== */
+.collection-hero {
+  position: relative;
+  height: 550px; /* Increased height for premium look */
+  background: url('images/hero-collection.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 80px; /* Large bold heading */
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.hero-text p {
+  font-size: 22px;
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ============== COLLECTION GRID (LAPTOP OPTIMIZED) ============== */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Larger cards on desktop */
+  gap: 40px;
+  padding: 80px;
+}
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 350px; /* Taller images for premium feel */
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.collection-card:hover img {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  color: #fff;
+  padding: 40px 30px;
+  text-align: left;
+}
+
+.overlay h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.overlay p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.overlay button {
+  padding: 12px 35px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.overlay button:hover {
+  background: #000;
+  color: #fff;
+  outline: 1px solid #fff;
+}
+
+/* ============== FOOTER (ALWAYS AT BOTTOM) ============== */
+footer {
+  padding: 60px 20px;
+  text-align: center;
+  background: #000;
+  width: 100%;
+  border-top: 1px solid #222;
+  margin-top: auto; /* Push footer to the very end */
+}
+
+footer p {
+  font-size: 18px; /* Bigger footer text for laptop */
+  color: #777;
+}
+
+/* ============== MOBILE MEDIA QUERY (430px) ============== */
+/* ============== MOBILE MEDIA QUERY (430px & Below) ============== */
+@media (max-width: 600px) {
+  
+  /* Navbar ko thoda compact kiya */
+  .navbar {
+    padding: 10px 15px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 20px; /* Logo thoda chota */
+    margin-bottom: 2px;
+  }
+
+  .navbar nav {
+    gap: 15px;
+    padding-bottom: 2px;
+  }
+
+  .navbar nav a {
+    font-size: 13px; /* Links chote taaki scroll kam karna pade */
+    margin: 0 4px;
+  }
+
+  /* Hero section ki height thodi kam ki */
+  .collection-hero {
+    height: 320px; 
+    margin-top: 95px; /* Navbar ke hisaab se space */
+  }
+
+  .hero-text h1 {
+    font-size: 30px; /* Heading size reduced */
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .hero-text p {
+    font-size: 13px; /* Sub-text chota */
+    padding: 0 20px;
+    line-height: 1.4;
+  }
+
+  /* Grid and Cards scaling */
+  .collection-grid {
+    padding: 15px; /* Side spacing kam ki */
+    gap: 15px;
+  }
+
+  .collection-card img {
+    height: 300px; /* Image height choti ki taaki scroll easy ho */
+  }
+
+  /* Card overlay content optimization */
+  .overlay {
+    padding: 15px;
+  }
+
+  .overlay h2 {
+    font-size: 20px; /* Card heading reduced */
+  }
+
+  .overlay p {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .overlay button {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+
+  /* Footer size adjustment */
+  footer {
+    padding: 25px 10px;
+  }
+  
+  footer p {
+    font-size: 13px;
+  }
+}

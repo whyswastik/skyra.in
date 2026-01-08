@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKYRA | Checkout</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+/* ================= BODY ================= */
+body{
+  background:#f4f4f4;
+  color:#222;
+}
+
+/* ================= CONTAINER ================= */
+.checkout{
+  max-width:1200px;
+  margin:50px auto;
+  padding:0 40px;
+}
+
+.checkout h1{
+  font-size:36px;
+  margin-bottom:30px;
+}
+
+/* ================= LAYOUT ================= */
+.checkout-wrap{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+}
+
+/* ================= LEFT ================= */
+.box{
+  background:#fff;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.box h2{
+  margin-bottom:15px;
+}
+
+/* PRODUCTS */
+.product{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:12px;
+  font-size:15px;
+}
+
+/* FORM */
+form{
+  display:grid;
+  gap:15px;
+  margin-top:15px;
+}
+
+input{
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+/* ================= RIGHT ================= */
+.summary{
+  background:#111;
+  color:#fff;
+  padding:30px;
+  border-radius:20px;
+}
+
+.summary h3{
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.total{
+  font-size:26px;
+  font-weight:600;
+  margin-bottom:25px;
+}
+
+button{
+  width:100%;
+  padding:16px;
+  font-size:16px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+  background:#fff;
+  color:#000;
+  transition:.3s;
+}
+
+button:hover{
+  background:#e5e5e5;
+  transform:translateY(-2px);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .checkout{
+    padding:0 20px;
+    margin:30px auto;
+  }
+
+  .checkout h1{
+    font-size:28px;
+  }
+
+  .checkout-wrap{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="checkout">
+  <h1>Checkout</h1>
+
+  <div class="checkout-wrap">
+
+    <!-- LEFT -->
+    <div class="box">
+      <h2>Your Order</h2>
+      <div id="orderItems"></div>
+
+      <h2 style="margin-top:25px;">Customer Details</h2>
+      <form id="checkoutForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="text" id="address" placeholder="Full Address" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+      </form>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="summary">
+      <h3>Order Summary</h3>
+      <div class="total">Total: ₹<span id="totalPrice">0</span></div>
+      <button onclick="sendWhatsApp()">Order Now on WhatsApp</button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* ================= SAMPLE CART (replace with real cart later) ================= */
+let cart = JSON.parse(localStorage.getItem("cart")) || [
+  {name:"SKYRA Hoodie", price:1999, qty:1},
+  {name:"SKYRA Cap", price:699, qty:2}
+];
+
+let orderBox = document.getElementById("orderItems");
+let total = 0;
+
+/* DISPLAY CART */
+cart.forEach(item=>{
+  let div = document.createElement("div");
+  div.className="product";
+  div.innerHTML = `
+    <span>${item.name} × ${item.qty}</span>
+    <span>₹${item.price * item.qty}</span>
+  `;
+  orderBox.appendChild(div);
+  total += item.price * item.qty;
+});
+
+document.getElementById("totalPrice").innerText = total;
+
+/* ================= WHATSAPP ORDER ================= */
+function sendWhatsApp(){
+
+  let name = document.getElementById("name").value;
+  let address = document.getElementById("address").value;
+  let phone = document.getElementById("phone").value;
+
+  if(!name || !address || !phone){
+    alert("Please fill all details");
+    return;
+  }
+
+  let message = `🛒 *Hello! I want to buy the following products from SKYRA:
+
+   %0A%0A`;
+
+  cart.forEach(item=>{
+    message += `• ${item.name} × ${item.qty} = ₹${item.price * item.qty}%0A`;
+  });
+
+  message += `%0A💰 *Total:* ₹${total}%0A%0A`;
+  message += `👤 *Name:* ${name}%0A`;
+  message += `📞 *Phone:* ${phone}%0A`;
+  message += `🏠 *Address:* ${address}%0A%0A`;
+  message += `Please confirm my order. Thank you!`;
+
+  let url = `https://wa.me/917088736775?text=${message}`;
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Skyra</title>
+<style>
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.contact-hero {
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
+}
+
+.contact-hero h1 {
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.contact-hero p {
+  font-size: 17px;
+  color: #bdbdbd;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.contact-container {
+  max-width: 1400px;   /* pehle 1200px */
+  margin: auto;
+  padding: 110px 30px;
+  display: flex;
+  gap: 80px;
+  align-items: stretch;
+}
+
+
+/* =========================
+   INFO & FORM BOX
+========================= */
+.contact-info,
+.contact-form {
+  flex: 1 1 0;
+  background: #151515;
+  padding: 60px;              /* pehle 45px */
+  border-radius: 22px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.55);
+  min-height: 520px;          /* visual height boost */
+}
+
+
+.contact-info h2,
+.contact-form h2 {
+  font-size: 28px;
+  margin-bottom: 22px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+
+/* =========================
+   INFO ROWS
+========================= */
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #e0e0e0;
+}
+
+.info-box span {
+  font-size: 22px;
+}
+
+/* =========================
+   FORM
+========================= */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #0e0e0e;
+  border: 1px solid #2c2c2c;
+  padding: 14px 16px;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form textarea {
+  min-height: 160px;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ffffff;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.contact-form button {
+  margin-top: 10px;
+  padding: 16px;
+  border: none;
+  border-radius: 40px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #e5e5e5;
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   TABLET (≤ 992px)
+========================================================= */
+@media (max-width: 992px) {
+
+  .contact-hero {
+    padding: 80px 20px;
+  }
+
+  .contact-hero h1 {
+    font-size: 46px;
+  }
+
+  .contact-container {
+    padding: 80px 20px;
+    gap: 40px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 35px;
+  }
+}
+
+/* =========================================================
+   MOBILE (≤ 768px)
+========================================================= */
+@media (max-width: 768px) {
+
+  .contact-hero {
+    padding: 60px 16px;
+  }
+
+  .contact-hero h1 {
+    font-size: 34px;
+  }
+
+  .contact-hero p {
+    font-size: 14px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    padding: 60px 16px;
+    gap: 30px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 28px;
+    border-radius: 16px;
+  }
+
+  .contact-info h2,
+  .contact-form h2 {
+    font-size: 22px;
+  }
+
+  .info-box {
+    font-size: 14px;
+  }
+
+  .info-box span {
+    font-size: 18px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .contact-form button {
+    font-size: 14px;
+    padding: 14px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE (≤ 480px)
+========================================================= */
+@media (max-width: 480px) {
+
+  .contact-hero h1 {
+    font-size: 28px;
+  }
+
+  .contact-container {
+    padding: 45px 14px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 22px;
+  }
+
+  .contact-form textarea {
+    min-height: 130px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <h1>Get in Touch</h1>
+  <p>We'd love to hear from you. Let's build Skyra together.</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-container">
+
+  <!-- INFO -->
+  <div class="contact-info">
+    <h2>Contact Information</h2>
+    <p>Have a question or want to collaborate? Reach out anytime.</p>
+
+    <div class="info-box">
+      <span>📍</span>
+      <p>India</p>
+    </div>
+    <div class="info-box">
+      <span>📧</span>
+      <p></p>
+    </div>
+    <div class="info-box">
+      <span>📞</span>
+      <p>+91 XXXXX XXXXX</p>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="contact-form">
+    <h2>Send a Message</h2>
+
+    <form id="contactForm">
+      <input type="text" name="from_name" placeholder="Your Name" required>
+      <input type="email" name="from_email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject">
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</section>
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("PUBLIC_KEY_HERE"); // 🔴 yahan apna PUBLIC KEY daalo
+})();
+
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  const btn = form.querySelector('button');
+  btn.innerText = "Sending...";
+  btn.disabled = true;
+
+  emailjs.sendForm(
+    "SERVICE_ID_HERE",   // 🔴 SERVICE ID
+    "TEMPLATE_ID_HERE",  // 🔴 TEMPLATE ID
+    this
+  ).then(() => {
+    alert("Message sent successfully!");
+    form.reset();
+    btn.innerText = "Send Message";
+    btn.disabled = false;
+  }, (error) => {
+    alert("Failed to send message 😢");
+    console.log(error);
+    btn.innerText = "Send Message";
+    btn.disabled = false;
+  });
+});
+</script>
+
+</body>
+</html>
